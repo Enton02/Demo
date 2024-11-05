@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfdftcb1lkifh"]
+
+[ext_resource type="Script" path="res://scenes/weapon.gd" id="1_gd7cm"]
+[ext_resource type="Texture2D" uid="uid://dnq3n4cla42gp" path="res://assets/sprites/tank_weapon.png" id="1_i7jbq"]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_gd7cm")
+
+[node name="WeaponSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_i7jbq")
+offset = Vector2(10, 0)
+
+[node name="ReloadTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
